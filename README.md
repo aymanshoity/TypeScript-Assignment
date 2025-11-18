@@ -2,9 +2,17 @@ What are some differences between interfaces and types in TypeScript?
 
 Typescript এ typeও interface এর মধ্যে পার্থক্য 
 ১। type ইনপুট ডাটা টাইপ এর ১ টা কালেকশন। Primitive, tupples, union এর জন্য ইউস করা হয়। Interface হলো মূলত object type ডাটার জন্য ইউস করা হয়। মূলত ইনপুট অবজেক্ট এর syntax টা ensure করে
+
+
 ২। type,  interfaceএর তুলনায় flexible.
+
+
 ৩। class extending এ interfaceব্যাবহার করা হয়। type ব্যাবহার করা যায় না।
+
+
 ৪। সেইম নাম type এর ক্ষেত্রে একাধিক বার ব্যাবহার করলে error return করে। কিন্তু interface এ  মার্জ হয়।
+
+
 ৫ । type  এর ক্ষেত্রে "type" কী ওয়ার্ড ব্যাবহার করা হয়।interface এর ক্ষেত্রে "interface" কী ওয়ার্ড ব্যাবহার করা হয়।
 <!-- sorry i have less habit of typing bangla..i did it with my phone  -->
 
@@ -18,7 +26,7 @@ type Appetizer= "fries" | 'onthon' |"cheeseball"
  }
 
  chooseAppetizer('fries') // ✅  সঠিক
- 
+
   chooseAppetizer('rice') // ❌  ভুল
 
 //  intersection
