@@ -18,6 +18,7 @@ type Appetizer= "fries" | 'onthon' |"cheeseball"
  }
 
  chooseAppetizer('fries') // ✅  সঠিক
+ 
   chooseAppetizer('rice') // ❌  ভুল
 
 //  intersection
