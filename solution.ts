@@ -11,12 +11,13 @@ const formatValue =(value:Value):Value=>{
 }
 
 type Input=string | number[];
-const getLength =(input:Input)=>{
+const getLength =(input:Input):number|undefined=>{
    if(Array.isArray(input)){
       return input.length
    }else{
       if(typeof input ==='string'){
-         return input.length
+         const onlyCharacter=input.replace(" ","")
+         return onlyCharacter.length
       }
    }
 
@@ -86,7 +87,7 @@ const getUniqueValues = (arr1: InputArray, arr2: InputArray): InputArray => {
       if(value===undefined){
          continue
       }
-      if (! uniqueArray.includes(value)) {
+      if (!uniqueArray.includes(value)) {
          uniqueArray.push(value)
       }
    }
@@ -100,9 +101,15 @@ interface Product {
    quantity: number,
    discount?: number,
 }
-// didn't handle discount
 
-const calculateTotalPrice = (productList: Product[]) => productList.reduce((acc, item) => 
- acc + ((item.price * item?.quantity) - (item.price * item?.quantity * (item.discount ?? 0) / 100)) 
-, 0)
+
+const calculateTotalPrice = (productList: Product[] |[]):number => {
+   if (productList.length === 0) return 0
+   else{
+      return productList.reduce((acc, item) =>
+         acc + ((item.price * item?.quantity) - (item.price * item?.quantity * (item.discount ?? 0) / 100))
+         , 0)
+   }
+
+}
 
